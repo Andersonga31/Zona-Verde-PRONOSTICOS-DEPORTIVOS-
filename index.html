@@ -1,214 +1,247 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pronósticos Deportivos - Ecuabet</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zona Verde — Pronósticos Deportivos</title>
+  <meta name="description" content="Pronósticos deportivos diarios, análisis y estadísticas. Si buscas apuestas con criterio, estás en Zona Verde." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0d0d0d;
-      color: #fff;
+    :root{
+      --bg:#071018; /* deep navy */
+      --card:#0b1a26;
+      --accent:#1db954; /* verde brillante */
+      --muted:#94a3b8;
+      --glass: rgba(255,255,255,0.03);
+      --radius:14px;
+      --max-width:1100px;
+      --shadow: 0 6px 18px rgba(2,6,23,0.6);
     }
-    header {
-      background: linear-gradient(90deg, #00a859, #fdd835);
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, #06121a 0%, #071018 50%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.4;
+      padding:32px 16px;
+      display:flex;
+      justify-content:center;
     }
-    header img {
-      height: 60px;
+    .container{width:100%;max-width:var(--max-width)}
+    header{
+      display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;
     }
-    nav a {
-      margin-left: 20px;
-      color: #000;
-      font-weight: bold;
-      text-decoration: none;
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{
+      width:54px;height:54px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#14833b);display:flex;align-items:center;justify-content:center;font-weight:800;color:#021014;box-shadow:var(--shadow);
     }
-    .hero {
-      padding: 80px 20px;
-      text-align: center;
-      background: url('https://picsum.photos/1400/600?random=1') center/cover no-repeat;
-      animation: fadeIn 1.5s ease-in-out;
-    }
-    .hero h1 {
-      font-size: 48px;
-      font-weight: 900;
-      text-shadow: 0 0 8px #000;
-    }
-    .hero p {
-      font-size: 20px;
-      max-width: 600px;
-      margin: auto;
-      text-shadow: 0 0 6px #000;
-    }
-    .btn {
-      display: inline-block;
-      padding: 15px 30px;
-      margin-top: 20px;
-      background: #00a859;
-      color: #fff;
-      border-radius: 10px;
-      font-size: 18px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-    .btn:hover {
-      background: #fdd835;
-      color: #000;
-    }
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25d366;
-      padding: 14px;
-      border-radius: 50%;
-      animation: pulse 1.5s infinite;
-    }
-    .whatsapp img {
-      width: 40px;
-      height: 40px;
-    }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-      100% { transform: scale(1); }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    .registro {
-      padding: 50px;
-      text-align: center;
-      background: #111;
-    }
-    .registro input {
-      padding: 12px;
-      width: 300px;
-      border-radius: 8px;
-      border: none;
-      margin: 10px 0;
-    }
-    .registro button {
-      padding: 12px 30px;
-      border: none;
-      background: #fdd835;
-      font-size: 18px;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    footer {
-      background: #000;
-      padding: 20px;
-      text-align: center;
-    }
-      .floating-icons {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      overflow: hidden;
-    }
-    .icon-item {
-      position: absolute;
-      width: 70px;
-      animation: floatUp 8s linear infinite;
-      opacity: 0.85;
-    }
-    @keyframes floatUp {
-      0% { transform: translateY(100vh) rotate(0deg); }
-      100% { transform: translateY(-10vh) rotate(360deg); }
-    }
-</style>
+    h1{font-size:20px;margin:0}
+    p.lead{margin:0;color:var(--muted);font-size:14px}
+    nav a{color:var(--muted);text-decoration:none;margin-left:16px;font-size:14px}
+
+    main{display:grid;grid-template-columns:1fr 360px;gap:24px}
+    @media (max-width:900px){main{grid-template-columns:1fr}header{flex-direction:column;align-items:flex-start}nav{margin-top:12px}}
+
+    /* Hero */
+    .hero{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:20px;border-radius:var(--radius);box-shadow:var(--shadow);display:flex;gap:20px;align-items:center}
+    .hero-left{flex:1}
+    .cta{display:inline-block;margin-top:12px;padding:10px 16px;border-radius:10px;background:var(--accent);color:#051014;font-weight:700;text-decoration:none}
+
+    /* Cards list */
+    .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px}
+    @media (max-width:700px){.cards{grid-template-columns:1fr}}
+    .card{background:var(--card);padding:12px;border-radius:12px;box-shadow:0 8px 24px rgba(2,6,23,0.5)}
+    .card h3{margin:0;font-size:15px}
+    .meta{color:var(--muted);font-size:13px;margin-top:6px}
+    .odds{margin-top:10px;font-weight:700;color:var(--accent)}
+
+    /* Sidebar */
+    .sidebar{position:relative}
+    .panel{background:var(--glass);backdrop-filter: blur(6px);padding:14px;border-radius:12px}
+    .stats{display:flex;gap:10px;justify-content:space-between;margin-top:10px}
+    .stat{flex:1;text-align:center}
+    .stat b{display:block;font-size:18px;color:var(--accent)}
+
+    /* Footer */
+    footer{margin-top:26px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* Buttons & small */
+    .btn{display:inline-block;padding:8px 12px;border-radius:10px;text-decoration:none}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    /* Form */
+    label{display:block;font-size:13px;margin-bottom:6px}
+    input,textarea,select{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+    textarea{min-height:100px}
+
+    /* small helpers */
+    .muted{color:var(--muted);font-size:13px}
+    .tag{display:inline-block;padding:6px 8px;border-radius:999px;font-size:12px;background:rgba(255,255,255,0.02);color:var(--muted);}
+
+  </style>
 </head>
 <body>
-  <header>
-    <img src="A_logo_against_a_dark_green_background_features_th.png" alt="Ecuabet Logo" />
-    <nav>
-      <a href="#">Inicio</a>
-      <a href="#registro">Registro</a>
-      <a href="#pronosticos">Pronósticos</a>
-    </nav>
-  </header>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">ZV</div>
+        <div>
+          <h1>Zona Verde</h1>
+          <p class="lead">Pronósticos deportivos — análisis diario & estadísticas</p>
+        </div>
+      </div>
+      <nav>
+        <a href="#pronosticos">Pronósticos</a>
+        <a href="#estadisticas">Estadísticas</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
 
-  <section class="hero" style="position: relative; overflow: hidden;">
-    <div class="floating-icons">
-      <img class="icon-item" src="https://pngimg.com/uploads/clover/clover_PNG26.png" style="left:10%; animation-delay:0s;" />
-      <img class="icon-item" src="https://pngimg.com/uploads/clover/clover_PNG26.png" style="left:70%; animation-delay:2s;" />
-      <img class="icon-item" src="https://pngimg.com/uploads/seven/seven_PNG44.png" style="left:40%; animation-delay:4s; width:90px;" />
-      <img class="icon-item" src="https://pngimg.com/uploads/seven/seven_PNG44.png" style="left:85%; animation-delay:1s; width:90px;" />
-    </div>
-    <h1>ZONA VERDE</h1>
-    <p>Zona Verde es tu espacio exclusivo de pronósticos deportivos, análisis expertos y estadísticas en tiempo real. Aquí combinamos estrategia, información y tecnología para ayudarte a tomar decisiones inteligentes y aumentar tus posibilidades de ganar.</p>
-    <a href="https://www.ecuabet.com" target="_blank" class="btn">Entrar a Ecuabet</a>
-  </section>
+    <main>
+      <section>
+        <div class="hero">
+          <div class="hero-left">
+            <h2 style="margin:0;font-size:22px">Pronóstico destacado — Hoy</h2>
+            <p class="muted" style="margin-top:6px">Partido: <strong>Barcelona SC vs Emelec</strong> · Tipo: 1X2 · Hora: 19:00</p>
+            <p style="margin-top:10px">Análisis corto: El equipo local llega con mejor forma en los últimos 5 partidos; recomendamos una apuesta moderada con gestión de bankroll. Recuerda jugar responsablemente.</p>
+            <div style="margin-top:12px">
+              <span class="tag">Riesgo: Medio</span>
+              <a class="cta" href="#pronosticos">Ver pronósticos</a>
+            </div>
+          </div>
+          <div style="width:200px;text-align:center">
+            <!-- placeholder for image or chart -->
+            <div style="height:120px;border-radius:12px;background:linear-gradient(135deg,#08323a,#052227);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 -8px 30px rgba(0,0,0,0.4)"> 
+              <div style="font-size:30px;color:var(--accent)">+</div>
+            </div>
+            <p class="muted" style="margin-top:10px;font-size:13px">Éxito últimas 7 días: <strong>67%</strong></p>
+          </div>
+        </div>
 
-  <a class="whatsapp" href="https://wa.me/593982455959" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" />
-  </a>
+        <h3 style="margin-top:18px">Pronósticos recientes</h3>
+        <div class="cards" id="pronosticos">
+          <!-- ejemplo de tarjeta; repite/añade según necesites -->
+          <article class="card">
+            <h3>Real Madrid vs Barcelona — Más de 2.5 goles</h3>
+            <div class="meta">Fecha: 2025-11-22 · Competición: LaLiga</div>
+            <div class="odds">Cuota sugerida: 1.75</div>
+            <p class="muted" style="margin-top:8px">Comentario: Ambos equipos muestran ataque fuerte; se espera un partido con goles.</p>
+          </article>
 
-  <section id="registro" class="registro">
-    <h2>Regístrate para recibir pronósticos</h2>
-    <input type="text" placeholder="Nombre" /><br />
-    <input type="email" placeholder="Correo" /><br />
-    <button>Registrarme</button>
-  </section>
+          <article class="card">
+            <h3>Boca Juniors vs River Plate — BTTS (Sí)</h3>
+            <div class="meta">Fecha: 2025-11-23 · Competición: Copa</div>
+            <div class="odds">Cuota sugerida: 1.60</div>
+            <p class="muted" style="margin-top:8px">Comentario: Historial de enfrentamientos con goles en ambos arcos.</p>
+          </article>
 
-  <footer>
-    © 2025 Pronósticos Deportivos - Ecuabet
-    <section id="pronosticos" class="registro" style="background:#0b0b0b; padding:60px;">
-    <h2>Pronósticos Premium</h2>
-    <p>Para acceder a los pronósticos exclusivos debes realizar el pago a nuestra cuenta del Banco Pichincha y enviar el comprobante a WhatsApp.</p>
+          <article class="card">
+            <h3>Manchester City vs Arsenal — 1</h3>
+            <div class="meta">Fecha: 2025-11-24 · Competición: Premier</div>
+            <div class="odds">Cuota sugerida: 2.20</div>
+            <p class="muted" style="margin-top:8px">Comentario: Local con ligera ventaja por plantilla y forma.</p>
+          </article>
 
-    <h3>💰 Datos de Pago - Banco Pichincha</h3>
-    <p><strong>Titular:</strong> Anderson Gavilanez<br>
-    <strong>Banco:</strong> Pichincha<br>
-    <strong>Tipo de cuenta:</strong> Ahorros<br>
-    <strong>Número de cuenta:</strong> 2205656982</p>
+          <article class="card">
+            <h3>Liverpool vs Chelsea — Menos de 3.5 goles</h3>
+            <div class="meta">Fecha: 2025-11-26 · Competición: Premier</div>
+            <div class="odds">Cuota sugerida: 1.45</div>
+            <p class="muted" style="margin-top:8px">Comentario: Partido táctico esperado con control del medio campo.</p>
+          </article>
+        </div>
 
-    <a href="https://wa.me/593982455959?text=Hola%2C%20ya%20realic%C3%A9%20el%20pago%20a%20la%20cuenta%20Pichincha%20y%20a%C3%B1exo%20mi%20comprobante" target="_blank" style="display:inline-block; padding:15px 30px; background:#00a859; color:#fff; border-radius:10px; font-size:18px; text-decoration:none;">Enviar comprobante por WhatsApp</a>
+        <!-- sección de estadísticas simple -->
+        <section id="estadisticas" style="margin-top:18px">
+          <h3>Estadísticas</h3>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px">
+            <div class="card" style="flex:1;min-width:220px">
+              <h4 style="margin:0">Racha de aciertos</h4>
+              <p class="muted" style="margin-top:8px">Últimos 30 pronósticos: <strong>19 aciertos (63%)</strong></p>
+            </div>
+            <div class="card" style="flex:1;min-width:220px">
+              <h4 style="margin:0">ROI estimado</h4>
+              <p class="muted" style="margin-top:8px">ROI mensual estimado: <strong>+8%</strong></p>
+            </div>
+          </div>
+        </section>
 
-    <br><br>
-    <button style="padding:12px 30px; background:#fdd835; border:none; border-radius:8px; font-size:18px; cursor:pointer;">Subir Pronóstico (Solo usuarios premium)</button>
-  </section>
+      </section>
 
-      <br><br>
-    <h2>Panel de Administrador</h2>
-    <p>Acceso exclusivo para subir pronósticos y gestionar usuarios premium.</p>
-    <a href="#admin" style="display:inline-block; padding:12px 30px; background:#ff5733; color:#fff; border-radius:10px; font-size:18px; text-decoration:none;">Entrar al Panel Admin</a>
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="panel">
+          <h3 style="margin:0">Suscríbete</h3>
+          <p class="muted" style="margin-top:8px">Recibe pronósticos diarios en tu correo. Prometemos no spammear.</p>
+          <form id="form-sub" style="margin-top:10px" onsubmit="return subscribe(event)">
+            <label for="email">Correo</label>
+            <input id="email" type="email" placeholder="tu@correo.com" required />
+            <div style="margin-top:8px;display:flex;gap:8px">
+              <button class="btn" type="submit" style="background:var(--accent);color:#021014;border:none;border-radius:10px;flex:1">Suscribirme</button>
+              <button class="btn btn-ghost" type="button" onclick="toggleDemo()">Demo</button>
+            </div>
+          </form>
 
-  </footer>
+          <div style="margin-top:14px">
+            <h4 style="margin:0">Estadísticas rápidas</h4>
+            <div class="stats">
+              <div class="stat"><b>63%</b><span class="muted">Acierto</span></div>
+              <div class="stat"><b>+8%</b><span class="muted">ROI</span></div>
+              <div class="stat"><b>120</b><span class="muted">Pronósticos</span></div>
+            </div>
+          </div>
 
-<!-- Panel de Administrador -->
-<section id="admin" style="background:#111; padding:60px; text-align:center;">
-  <h2>Login de Administrador</h2>
-  <p>Ingresa tus credenciales para acceder al panel privado.</p>
-  <form id="adminLogin" style="max-width:350px; margin:auto; background:#0d0d0d; padding:30px; border-radius:12px;">
-    <input type="text" placeholder="Usuario" style="width:100%; padding:12px; margin-bottom:15px; border-radius:6px; border:none;" />
-    <input type="password" placeholder="Contraseña" style="width:100%; padding:12px; margin-bottom:20px; border-radius:6px; border:none;" />
-    <button type="button" style="width:100%; padding:12px; background:#00a859; color:#fff; border:none; border-radius:8px; font-size:18px; cursor:pointer;">Ingresar</button>
-    </form>
-  <p id="loginStatus" style="color:#fdd835; margin-top:15px; font-size:18px; display:none;">Credenciales incorrectas</p>
+          <div style="margin-top:14px">
+            <h4 style="margin:0">Contacto rápido</h4>
+            <p class="muted" style="margin-top:6px">¿Algo urgente? Escríbenos por Telegram o email.</p>
+            <p style="margin-top:8px"><a href="mailto:contacto@zonaverde.example" class="muted">contacto@zonaverde.example</a></p>
+          </div>
+        </div>
+
+        <div style="margin-top:14px">
+          <div class="card" style="padding:12px">
+            <h4 style="margin:0">Resultado del día</h4>
+            <p class="muted" style="margin-top:8px">Último resultado: <strong>3/4 pronósticos acertados</strong></p>
+            <a class="btn btn-ghost" href="#">Ver historial</a>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> Zona Verde · Pronósticos deportivos · Juega responsablemente.</p>
+    </footer>
+  </div>
+
   <script>
-    document.getElementById('adminLogin').addEventListener('submit', function(e) {
+    // Rellenar año en footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simulación de suscripción (reemplaza con tu backend o servicio de email)
+    function subscribe(e){
       e.preventDefault();
-      const user = this.querySelector('input[type=text]').value;
-      const pass = this.querySelector('input[type=password]').value;
+      const email = document.getElementById('email').value;
+      alert('Gracias — ' + email + ' se ha suscrito (simulado). Reemplaza esta función con tu API).');
+      document.getElementById('email').value = '';
+      return false;
+    }
 
-      if (user === 'Andersonga31' && pass === 'andersonga31') {
-        window.location.href = '#panelReal';
-      } else {
-        document.getElementById('loginStatus').style.display = 'block';
-      }
-    });
+    function toggleDemo(){
+      alert('Demo: aquí podrías mostrar ejemplos o desbloquear contenido.');
+    }
+
+    // Si quieres poblar pronósticos dinámicamente, podrías usar este array
+    const pronosticos = [
+      {title:'Real Madrid vs Barcelona — Más de 2.5 goles', date:'2025-11-22', comp:'LaLiga', odds:1.75},
+      {title:'Boca vs River — BTTS', date:'2025-11-23', comp:'Copa', odds:1.6},
+    ];
+
+    // Funciones adicionales que puedas necesitar se agregan aquí
   </script>
-</section>
-
 </body>
 </html>
