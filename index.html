@@ -1,59 +1,214 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zona Verde - Pronósticos Deportivos</title>
-
-<style>
-body { margin:0; background:#0f0f0f; color:white; font-family:Arial; text-align:center; }
-header { padding:20px; background:#009b3a; font-size:28px; font-weight:bold; text-shadow:0 0 10px #00ff6a; }
-.logo { position:absolute; top:15px; left:20px; width:140px; }
-.carousel { width:90%; margin:40px auto; overflow:hidden; border-radius:15px; border:3px solid #00ff6a; }
-.carousel img { width:100%; display:none; }
-.carousel img.active { display:block; }
-.titulo-liga { font-size:24px; margin-top:20px; color:#00ff6a; font-weight:bold; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pronósticos Deportivos - Ecuabet</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+    }
+    header {
+      background: linear-gradient(90deg, #00a859, #fdd835);
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header img {
+      height: 60px;
+    }
+    nav a {
+      margin-left: 20px;
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .hero {
+      padding: 80px 20px;
+      text-align: center;
+      background: url('https://picsum.photos/1400/600?random=1') center/cover no-repeat;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 900;
+      text-shadow: 0 0 8px #000;
+    }
+    .hero p {
+      font-size: 20px;
+      max-width: 600px;
+      margin: auto;
+      text-shadow: 0 0 6px #000;
+    }
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      margin-top: 20px;
+      background: #00a859;
+      color: #fff;
+      border-radius: 10px;
+      font-size: 18px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #fdd835;
+      color: #000;
+    }
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      padding: 14px;
+      border-radius: 50%;
+      animation: pulse 1.5s infinite;
+    }
+    .whatsapp img {
+      width: 40px;
+      height: 40px;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .registro {
+      padding: 50px;
+      text-align: center;
+      background: #111;
+    }
+    .registro input {
+      padding: 12px;
+      width: 300px;
+      border-radius: 8px;
+      border: none;
+      margin: 10px 0;
+    }
+    .registro button {
+      padding: 12px 30px;
+      border: none;
+      background: #fdd835;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    footer {
+      background: #000;
+      padding: 20px;
+      text-align: center;
+    }
+      .floating-icons {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .icon-item {
+      position: absolute;
+      width: 70px;
+      animation: floatUp 8s linear infinite;
+      opacity: 0.85;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) rotate(0deg); }
+      100% { transform: translateY(-10vh) rotate(360deg); }
+    }
 </style>
 </head>
-
 <body>
+  <header>
+    <img src="A_logo_against_a_dark_green_background_features_th.png" alt="Ecuabet Logo" />
+    <nav>
+      <a href="#">Inicio</a>
+      <a href="#registro">Registro</a>
+      <a href="#pronosticos">Pronósticos</a>
+    </nav>
+  </header>
 
-<img src="img/logo-zonaverde.png" class="logo">
+  <section class="hero" style="position: relative; overflow: hidden;">
+    <div class="floating-icons">
+      <img class="icon-item" src="https://pngimg.com/uploads/clover/clover_PNG26.png" style="left:10%; animation-delay:0s;" />
+      <img class="icon-item" src="https://pngimg.com/uploads/clover/clover_PNG26.png" style="left:70%; animation-delay:2s;" />
+      <img class="icon-item" src="https://pngimg.com/uploads/seven/seven_PNG44.png" style="left:40%; animation-delay:4s; width:90px;" />
+      <img class="icon-item" src="https://pngimg.com/uploads/seven/seven_PNG44.png" style="left:85%; animation-delay:1s; width:90px;" />
+    </div>
+    <h1>ZONA VERDE</h1>
+    <p>Zona Verde es tu espacio exclusivo de pronósticos deportivos, análisis expertos y estadísticas en tiempo real. Aquí combinamos estrategia, información y tecnología para ayudarte a tomar decisiones inteligentes y aumentar tus posibilidades de ganar.</p>
+    <a href="https://www.ecuabet.com" target="_blank" class="btn">Entrar a Ecuabet</a>
+  </section>
 
-<header>🔥 Zona Verde - Pronósticos Deportivos 🔥</header>
+  <a class="whatsapp" href="https://wa.me/593982455959" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" />
+  </a>
 
-<div class="titulo-liga">🇬🇧 Premier League</div>
-<div class="carousel">
-    <img src="img/premier1.jpg" class="active">
-    <img src="img/premier2.jpg">
-</div>
+  <section id="registro" class="registro">
+    <h2>Regístrate para recibir pronósticos</h2>
+    <input type="text" placeholder="Nombre" /><br />
+    <input type="email" placeholder="Correo" /><br />
+    <button>Registrarme</button>
+  </section>
 
-<div class="titulo-liga">🇩🇪 Bundesliga</div>
-<div class="carousel">
-    <img src="img/bundesliga1.jpg" class="active">
-    <img src="img/bundesliga2.jpg">
-</div>
+  <footer>
+    © 2025 Pronósticos Deportivos - Ecuabet
+    <section id="pronosticos" class="registro" style="background:#0b0b0b; padding:60px;">
+    <h2>Pronósticos Premium</h2>
+    <p>Para acceder a los pronósticos exclusivos debes realizar el pago a nuestra cuenta del Banco Pichincha y enviar el comprobante a WhatsApp.</p>
 
-<div class="titulo-liga">🇪🇸 La Liga</div>
-<div class="carousel">
-    <img src="img/laliga1.jpg" class="active">
-    <img src="img/laliga2.jpg">
-</div>
+    <h3>💰 Datos de Pago - Banco Pichincha</h3>
+    <p><strong>Titular:</strong> Anderson Gavilanez<br>
+    <strong>Banco:</strong> Pichincha<br>
+    <strong>Tipo de cuenta:</strong> Ahorros<br>
+    <strong>Número de cuenta:</strong> 2205656982</p>
 
-<script>
-const carousels = document.querySelectorAll('.carousel');
+    <a href="https://wa.me/593982455959?text=Hola%2C%20ya%20realic%C3%A9%20el%20pago%20a%20la%20cuenta%20Pichincha%20y%20a%C3%B1exo%20mi%20comprobante" target="_blank" style="display:inline-block; padding:15px 30px; background:#00a859; color:#fff; border-radius:10px; font-size:18px; text-decoration:none;">Enviar comprobante por WhatsApp</a>
 
-carousels.forEach(carousel => {
-    let index = 0;
-    const imgs = carousel.querySelectorAll('img');
+    <br><br>
+    <button style="padding:12px 30px; background:#fdd835; border:none; border-radius:8px; font-size:18px; cursor:pointer;">Subir Pronóstico (Solo usuarios premium)</button>
+  </section>
 
-    setInterval(() => {
-        imgs[index].classList.remove('active');
-        index = (index + 1) % imgs.length;
-        imgs[index].classList.add('active');
-    }, 2500);
-});
-</script>
+      <br><br>
+    <h2>Panel de Administrador</h2>
+    <p>Acceso exclusivo para subir pronósticos y gestionar usuarios premium.</p>
+    <a href="#admin" style="display:inline-block; padding:12px 30px; background:#ff5733; color:#fff; border-radius:10px; font-size:18px; text-decoration:none;">Entrar al Panel Admin</a>
+
+  </footer>
+
+<!-- Panel de Administrador -->
+<section id="admin" style="background:#111; padding:60px; text-align:center;">
+  <h2>Login de Administrador</h2>
+  <p>Ingresa tus credenciales para acceder al panel privado.</p>
+  <form id="adminLogin" style="max-width:350px; margin:auto; background:#0d0d0d; padding:30px; border-radius:12px;">
+    <input type="text" placeholder="Usuario" style="width:100%; padding:12px; margin-bottom:15px; border-radius:6px; border:none;" />
+    <input type="password" placeholder="Contraseña" style="width:100%; padding:12px; margin-bottom:20px; border-radius:6px; border:none;" />
+    <button type="button" style="width:100%; padding:12px; background:#00a859; color:#fff; border:none; border-radius:8px; font-size:18px; cursor:pointer;">Ingresar</button>
+    </form>
+  <p id="loginStatus" style="color:#fdd835; margin-top:15px; font-size:18px; display:none;">Credenciales incorrectas</p>
+  <script>
+    document.getElementById('adminLogin').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const user = this.querySelector('input[type=text]').value;
+      const pass = this.querySelector('input[type=password]').value;
+
+      if (user === 'Andersonga31' && pass === 'andersonga31') {
+        window.location.href = '#panelReal';
+      } else {
+        document.getElementById('loginStatus').style.display = 'block';
+      }
+    });
+  </script>
+</section>
 
 </body>
 </html>
