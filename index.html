@@ -129,7 +129,7 @@
 </head>
 <body>
   <header>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Ecuabet_logo.png/600px-Ecuabet_logo.png" alt="Ecuabet Logo" />
+    <img src="A_logo_against_a_dark_green_background_features_th.png" alt="Ecuabet Logo" />
     <nav>
       <a href="#">Inicio</a>
       <a href="#registro">Registro</a>
@@ -149,7 +149,7 @@
     <a href="https://www.ecuabet.com" target="_blank" class="btn">Entrar a Ecuabet</a>
   </section>
 
-  <a class="whatsapp" href="https://wa.me/593000000000" target="_blank">
+  <a class="whatsapp" href="https://wa.me/593982455959" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" />
   </a>
 
@@ -162,6 +162,53 @@
 
   <footer>
     © 2025 Pronósticos Deportivos - Ecuabet
+    <section id="pronosticos" class="registro" style="background:#0b0b0b; padding:60px;">
+    <h2>Pronósticos Premium</h2>
+    <p>Para acceder a los pronósticos exclusivos debes realizar el pago a nuestra cuenta del Banco Pichincha y enviar el comprobante a WhatsApp.</p>
+
+    <h3>💰 Datos de Pago - Banco Pichincha</h3>
+    <p><strong>Titular:</strong> Anderson Gavilanez<br>
+    <strong>Banco:</strong> Pichincha<br>
+    <strong>Tipo de cuenta:</strong> Ahorros<br>
+    <strong>Número de cuenta:</strong> 2205656982</p>
+
+    <a href="https://wa.me/593982455959?text=Hola%2C%20ya%20realic%C3%A9%20el%20pago%20a%20la%20cuenta%20Pichincha%20y%20a%C3%B1exo%20mi%20comprobante" target="_blank" style="display:inline-block; padding:15px 30px; background:#00a859; color:#fff; border-radius:10px; font-size:18px; text-decoration:none;">Enviar comprobante por WhatsApp</a>
+
+    <br><br>
+    <button style="padding:12px 30px; background:#fdd835; border:none; border-radius:8px; font-size:18px; cursor:pointer;">Subir Pronóstico (Solo usuarios premium)</button>
+  </section>
+
+      <br><br>
+    <h2>Panel de Administrador</h2>
+    <p>Acceso exclusivo para subir pronósticos y gestionar usuarios premium.</p>
+    <a href="#admin" style="display:inline-block; padding:12px 30px; background:#ff5733; color:#fff; border-radius:10px; font-size:18px; text-decoration:none;">Entrar al Panel Admin</a>
+
   </footer>
+
+<!-- Panel de Administrador -->
+<section id="admin" style="background:#111; padding:60px; text-align:center;">
+  <h2>Login de Administrador</h2>
+  <p>Ingresa tus credenciales para acceder al panel privado.</p>
+  <form id="adminLogin" style="max-width:350px; margin:auto; background:#0d0d0d; padding:30px; border-radius:12px;">
+    <input type="text" placeholder="Usuario" style="width:100%; padding:12px; margin-bottom:15px; border-radius:6px; border:none;" />
+    <input type="password" placeholder="Contraseña" style="width:100%; padding:12px; margin-bottom:20px; border-radius:6px; border:none;" />
+    <button type="button" style="width:100%; padding:12px; background:#00a859; color:#fff; border:none; border-radius:8px; font-size:18px; cursor:pointer;">Ingresar</button>
+    </form>
+  <p id="loginStatus" style="color:#fdd835; margin-top:15px; font-size:18px; display:none;">Credenciales incorrectas</p>
+  <script>
+    document.getElementById('adminLogin').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const user = this.querySelector('input[type=text]').value;
+      const pass = this.querySelector('input[type=password]').value;
+
+      if (user === 'Andersonga31' && pass === 'andersonga31') {
+        window.location.href = '#panelReal';
+      } else {
+        document.getElementById('loginStatus').style.display = 'block';
+      }
+    });
+  </script>
+</section>
+
 </body>
 </html>
